@@ -8,15 +8,15 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - caddy-certificates:/data/caddy
     ports:
-      - "80:80"
-      - "443:443"
+      - "82:82"
+      - "8443:8443"
     depends_on:
       - plausible
 
   plausible:
     labels:
       virtual.host: "example.com" # change to your domain name
-      virtual.port: "8000"
+      virtual.port: "8010"
       virtual.tls-email: "admin@example.com" # change to your email
         
 volumes:
